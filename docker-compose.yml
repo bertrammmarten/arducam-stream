@@ -1,0 +1,11 @@
+
+version: '3'
+services:
+  arducam-streamer:
+    build: .
+    ports:
+      - "8080:8080"
+    devices:
+      - "/dev/spidev0.0:/dev/spidev0.0"
+      - "/dev/spidev0.1:/dev/spidev0.1"
+    privileged: true
